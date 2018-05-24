@@ -1,0 +1,39 @@
+﻿@model FTHWebapp.ViewModels.LoginViewModel
+
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/margins.css" />
+
+<main class="container login">
+
+    <h2>Login</h2>
+
+    <div class="row">
+        <div class="login padding-top">
+
+            <div class="col-md-3 col-md-offset-5">
+                <form asp-controller="Home" asp-action="Login" method="post" class="form-group">
+                    <div class="form-group">
+                        <input asp-for="Username" class="form-control" placeholder="Gebruikersnaam" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input asp-for="Password" class="form-control" placeholder="Password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+
+                    <input type="submit" value="Login" class="btn btn-default col-md-3 col-md-offset-5 paddingtop" />
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</main>
+

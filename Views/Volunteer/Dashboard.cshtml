@@ -1,0 +1,41 @@
+﻿@model FTHWebapp.ViewModels.VolunteerViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dashboard</h2>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tbody>
+        @foreach (var item in Model.Volunteer)
+    {
+        <tr>
+            @Html.HiddenFor(ModelItem => item.PersonalId)
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(ModelItem => item.RoleName)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PersonalId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PersonalId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PersonalId })
+                </td>
+            </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@model FTHWebapp.Models.Project
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+
+
+<hr />
+<div class="row">
+
+    <div class="col-sm-5 col-lg-offset-1">
+        <img style="width: 100%" src="~/images/@Model.Pictures" />
+
+        Starting date of project @Html.DisplayFor(model => model.Date)<br />
+        Sort of this project @Html.DisplayFor(model => model.Type)<br />
+        Available functions for this project: @Html.DisplayFor(model => model.Functions)<br />
+        Minimum spots to start project @Html.DisplayFor(model => model.Minimumspots)
+    </div>
+
+    <div class="col-md-5">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</div>
+
+
+<div class="row">
+    <button id="helpbtn" type="button" class="btn-link">Help out now!</button>
+    @Html.ActionLink("Helpt out now!", "subscribe")
+    <input type="url" value="Help out now!" class="btn btn-default col-lg-2 col-lg-offset-9"/>
+</div>
+
+  
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,77 @@
+﻿@model FTHWebapp.ViewModels.ProjectViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <title>Projects</title>
+    <link rel="stylesheet" type="text/css" href="~/css/margins.css" />
+</head>
+
+<div class="Projectbanner"></div>
+
+<h2>Projects</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Functions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Minimumspots)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+                </th>
+        </tr>
+    </thead>
+
+        <tbody>
+            @foreach (var item in Model.Project)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Functions)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Minimumspots)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(ModelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(ModelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(ModelItem => item.Type)
+                    </td>
+       
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ProjectId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ProjectId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ProjectId })
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+
+    <div>
+        <a asp-action="Create" asp-controller="Project">Create</a>
+    </div>
