@@ -11,12 +11,12 @@ namespace FTHWebapp.Interfaces
     public interface IVolunteerContext
     {
         void AddVolunteer(Volunteer V);
-        Volunteer Edit(Volunteer V);
+        void Edit(Volunteer volunteer);
         List<Volunteer> AddRoles();
         Volunteer Gebruiker(string username, string password);
         void Checkpasswoord();
-        Volunteer GetDetails(int personalid);
+        Volunteer GetDetails(int id);
         void Checkinput();
-        void DeleteVolunteer();
+        void Delete(int id);
     }
 }

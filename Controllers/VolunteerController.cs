@@ -22,33 +22,20 @@ namespace FTHWebapp.Controllers
         }
 
         [HttpGet]
+
+
         public IActionResult Edit(int id)
         {
+                  return View(volunteerRepo.GetDetails(id));
+        }
+
+        public IActionResult Details(int id)
+        {
             Volunteer v = volunteerRepo.GetDetails(id);
-            VolunteerViewModel vw = new VolunteerViewModel(v);
-   
-
-            return View(vw);
-        }
-
-        [HttpPost, ActionName ("Edit")]
-        public IActionResult Edit(Volunteer volunteer)
-        {
-            volunteerRepo.Edit(volunteer);
-            //VolunteerViewModel vw = new VolunteerViewModel(volunteer);
-            return RedirectToAction("Index");
-            
-        }
-        [HttpPost]
-        public IActionResult Create(Volunteer volunteer)
-        {
-            
-            volunteerRepo.AddVolunteer(volunteer);
-            return RedirectToAction("Index", "Home");
+            return View(v);
 
         }
 
-        [HttpGet]
         public IActionResult Dashboard()
         {
             List<Volunteer> V = volunteerRepo.AddRoles();
@@ -61,19 +48,35 @@ namespace FTHWebapp.Controllers
             return View();
         }
 
+        //Vanaf hier alleen maar posts!
 
-        [HttpGet]
-        public IActionResult Details(int id)
+        [HttpPost]
+        public IActionResult Edit(Volunteer V)
         {
-            Volunteer v = volunteerRepo.GetDetails(id);
-            return View(v);    
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError(string.Empty, "Something went wrong");
+                return View("Edit");
+            }
 
+            volunteerRepo.Edit(V);
+            return View();
+            
         }
-        //[HttpDelete]
-        //public IActionResult Delete()
-        //{
-        //    Volunteer V = volunteerRepo.
-        //}
     
+        public IActionResult Create(Volunteer volunteer)
+        {
+            
+            volunteerRepo.AddVolunteer(volunteer);
+            return RedirectToAction("Index", "Home");
+
+        }   
+  
+        public IActionResult Delete(int id)
+        {
+           volunteerRepo.Delete(id);
+            return RedirectToAction("Index");
+        }
+
     }
 }

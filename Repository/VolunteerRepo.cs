@@ -8,7 +8,7 @@ using FTHWebapp.Models.DomainClasses;
 
 namespace FTHWebapp.Repository
 {
-    public class VolunteerRepo
+    public class VolunteerRepo: IVolunteerContext
     {
         private readonly IVolunteerContext _context;
         public VolunteerRepo(IVolunteerContext context)
@@ -24,18 +24,14 @@ namespace FTHWebapp.Repository
         {
             _context.AddVolunteer(V);
         }
-
-        public Volunteer Edit (int id)
-        {
-            _context.Edit(id);
-        }
         public void Edit (Volunteer volunteer)
         {
             _context.Edit(volunteer);
         }
-        public void DeleteVolunteer()
+        public void Delete(int id)
         {
-            _context.DeleteVolunteer();
+ 
+            _context.Delete(id);
         }
 
         public List<Volunteer> AddRoles()
@@ -52,6 +48,14 @@ namespace FTHWebapp.Repository
             throw new NotImplementedException();
         }
 
- 
+        public Volunteer Gebruiker(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Checkinput()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

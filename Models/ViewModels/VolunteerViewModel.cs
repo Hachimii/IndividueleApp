@@ -10,6 +10,7 @@ namespace FTHWebapp.ViewModels
 {
     public class VolunteerViewModel
     {
+        public Volunteer V { get; set; }
         public List<Volunteer> Volunteer { get; set; }
         public VolunteerViewModel(List<Volunteer> Volunteer)
         {
