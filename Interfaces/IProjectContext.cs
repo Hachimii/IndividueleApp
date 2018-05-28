@@ -21,6 +21,7 @@ namespace FTHWebapp.Interfaces
 
         void FilterProjects();
 
-        void delete();
+        void Delete(int id);
+        void Edit(Project p);
     }
 }

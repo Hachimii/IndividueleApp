@@ -16,15 +16,19 @@ namespace FTHWebapp.Repository
         {
             _projectcontext = context;
         }
-
+        public void Edit(Project project)
+        {
+            _projectcontext.Edit(project);
+        }
         public void AddProject(Project project)
         {
             _projectcontext.AddProject(project);
 
         }
-        public void delete()
+        
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _projectcontext.Delete(id);
         }
 
         public void FilterProjects()

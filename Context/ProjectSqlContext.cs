@@ -89,6 +89,42 @@ namespace FTHWebapp.SqlContext
             
         }
 
+        public void Delete(int id)
+        {
+            Openconnection();
+
+            string query = "Delete From Project Where ProjectId = @ProjectId";
+
+            using (SqlCommand cmd = new SqlCommand(query, Connection))
+            {
+                cmd.Parameters.AddWithValue("@ProjectId", id);
+                cmd.ExecuteNonQuery();
+            }
+
+            CloseConnection();
+        }
+
+        public void Edit(Project p)
+        {
+            Openconnection();
+            string query = "Update Project SET Name = @Name, Functions = @Functions, Minimumspots = @Minimumspots, Date = @Date, City = @City, Type = @Type, Description = @Description Where ProjectId = @ProjectId";
+
+            using (SqlCommand cmd = new SqlCommand(query, Connection))
+            {
+                cmd.Parameters.AddWithValue("@Name", p.Name);
+                cmd.Parameters.AddWithValue("@Functions", p.Functions);
+                cmd.Parameters.AddWithValue("@Minimumspots", p.Minimumspots);
+                cmd.Parameters.AddWithValue("@Date", p.Date);
+                cmd.Parameters.AddWithValue("@City", p.City);
+                cmd.Parameters.AddWithValue("@Type", p.Type);
+                cmd.Parameters.AddWithValue("@Description", p.Description);
+                cmd.Parameters.AddWithValue("@ProjectId", p.ProjectId);
+
+                cmd.ExecuteNonQuery();
+            }
+            CloseConnection();
+        }
+
         public List<Project> GetTypes()
         {
             T = new List<Project>();
@@ -115,7 +151,7 @@ namespace FTHWebapp.SqlContext
             Project P = new Project();
             Openconnection();
 
-            string query = "Select N from Project WHERE ProjectId = @projectid";
+            string query = "Select * from Project WHERE ProjectId = @projectid";
             SqlCommand cmd = new SqlCommand(query, Connection);
             cmd.Parameters.AddWithValue("@projectid", projectid);
             using (SqlDataReader R = cmd.ExecuteReader())
@@ -128,6 +164,7 @@ namespace FTHWebapp.SqlContext
                     P.Date = (string)(R["Date"]);
                     P.Description = (string)(R["Description"]);
                     P.Type = (string)(R["Type"]);
+                    P.City = (string)(R["City"]);
                     P.Pictures = (string)(R["Pictures"]);
 
                 }

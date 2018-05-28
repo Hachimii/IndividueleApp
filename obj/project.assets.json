@@ -13364,11 +13364,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hachi\\OneDrive\\Documenten\\Fontys\\Semester 2\\Individueel\\FTHWebapp\\FTHWebapp\\FTHWebapp.csproj",
+      "projectUniqueName": "C:\\Users\\Hachi\\OneDrive\\Documenten\\IndividueleApp\\FTHWebapp.csproj",
       "projectName": "FTHWebapp",
-      "projectPath": "C:\\Users\\Hachi\\OneDrive\\Documenten\\Fontys\\Semester 2\\Individueel\\FTHWebapp\\FTHWebapp\\FTHWebapp.csproj",
+      "projectPath": "C:\\Users\\Hachi\\OneDrive\\Documenten\\IndividueleApp\\FTHWebapp.csproj",
       "packagesPath": "C:\\Users\\Hachi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hachi\\OneDrive\\Documenten\\Fontys\\Semester 2\\Individueel\\FTHWebapp\\FTHWebapp\\obj\\",
+      "outputPath": "C:\\Users\\Hachi\\OneDrive\\Documenten\\IndividueleApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

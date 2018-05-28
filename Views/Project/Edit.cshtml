@@ -1,0 +1,33 @@
+﻿@model FTHWebapp.Models.Project
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+
+                @Html.HiddenFor(model => model.ProjectId)
+                Name: @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                Functions: @Html.TextBoxFor(model => model.Functions, new { @class = "form-control" })
+                Minimumspots: @Html.TextBoxFor(model => model.Minimumspots, new { @class = "form-control" })
+                Date: @Html.TextBoxFor(model => model.Date, new { @class = "form-control" })
+                Type: @Html.TextBoxFor(model => model.Type, new { @class = "form-control" })
+                City: @Html.TextBoxFor(model => model.City, new { @class = "form-control"})
+                Description: @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+           
+
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>

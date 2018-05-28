@@ -22,8 +22,6 @@ namespace FTHWebapp.Controllers
         }
 
         [HttpGet]
-
-
         public IActionResult Edit(int id)
         {
                   return View(volunteerRepo.GetDetails(id));

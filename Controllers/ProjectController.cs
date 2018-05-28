@@ -12,20 +12,39 @@ using Microsoft.AspNetCore.Http;
 using FTHWebapp.ViewModels;
 
 namespace FTHWebapp.Controllers
-    
+
 {
-    public class ProjectController: Controller
+    public class ProjectController : Controller
     {
         private readonly ProjectRepo projectrepo = new ProjectRepo(new ProjectSqlContext());
-        
+
         public IActionResult Index()
         {
             List<Project> P = projectrepo.GetAllProjects();
             ProjectViewModel Pro = new ProjectViewModel(P);
             return View(Pro);
-          
+
         }
 
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            Project P = projectrepo.GetDetails(id);
+            string file = "/images" + P.Pictures;
+            return View(P);
+
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            return View(projectrepo.GetDetails(id));
+        }
+
+        public IActionResult subscribe()
+        {
+            return RedirectToAction("index");
+        }
         public IActionResult Create()
         {
             return View();
@@ -39,19 +58,22 @@ namespace FTHWebapp.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpGet]
-        public IActionResult Details(int id)
+        public IActionResult Edit (Project project)
         {
-            Project P = projectrepo.GetDetails(id);
-            string file = "/images" + P.Pictures;
-            return View(P);    
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError(string.Empty, "Something went wrong");
+                return View("Edit");
+            }
 
+            projectrepo.Edit(project);
+            return View();
         }
 
-        public IActionResult subscribe()
+        public IActionResult Delete (int id)
         {
-            return RedirectToAction("index");
+            projectrepo.Delete(id);
+            return View("Index");
         }
-
     }
 }

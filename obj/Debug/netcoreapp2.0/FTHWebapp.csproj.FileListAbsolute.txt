@@ -9,3 +9,14 @@ C:\Users\Hachi\OneDrive\Documenten\Fontys\Semester 2\Individueel\FTHWebapp\FTHWe
 C:\Users\Hachi\OneDrive\Documenten\Fontys\Semester 2\Individueel\FTHWebapp\FTHWebapp\obj\Debug\netcoreapp2.0\FTHWebapp.dll
 C:\Users\Hachi\OneDrive\Documenten\Fontys\Semester 2\Individueel\FTHWebapp\FTHWebapp\obj\Debug\netcoreapp2.0\FTHWebapp.pdb
 C:\Users\Hachi\OneDrive\Documenten\Fontys\Semester 2\Individueel\FTHWebapp\FTHWebapp\obj\Debug\netcoreapp2.0\FTHWebapp.csprojAssemblyReference.cache
+C:\Users\Hachi\OneDrive\Documenten\IndividueleApp\bin\Debug\netcoreapp2.0\FTHWebapp.deps.json
+C:\Users\Hachi\OneDrive\Documenten\IndividueleApp\bin\Debug\netcoreapp2.0\FTHWebapp.runtimeconfig.json
+C:\Users\Hachi\OneDrive\Documenten\IndividueleApp\bin\Debug\netcoreapp2.0\FTHWebapp.runtimeconfig.dev.json
+C:\Users\Hachi\OneDrive\Documenten\IndividueleApp\bin\Debug\netcoreapp2.0\FTHWebapp.dll
+C:\Users\Hachi\OneDrive\Documenten\IndividueleApp\bin\Debug\netcoreapp2.0\FTHWebapp.pdb
+C:\Users\Hachi\OneDrive\Documenten\IndividueleApp\obj\Debug\netcoreapp2.0\FTHWebapp.csprojAssemblyReference.cache
+C:\Users\Hachi\OneDrive\Documenten\IndividueleApp\obj\Debug\netcoreapp2.0\FTHWebapp.csproj.CoreCompileInputs.cache
+C:\Users\Hachi\OneDrive\Documenten\IndividueleApp\obj\Debug\netcoreapp2.0\FTHWebapp.AssemblyInfoInputs.cache
+C:\Users\Hachi\OneDrive\Documenten\IndividueleApp\obj\Debug\netcoreapp2.0\FTHWebapp.AssemblyInfo.cs
+C:\Users\Hachi\OneDrive\Documenten\IndividueleApp\obj\Debug\netcoreapp2.0\FTHWebapp.dll
+C:\Users\Hachi\OneDrive\Documenten\IndividueleApp\obj\Debug\netcoreapp2.0\FTHWebapp.pdb
